@@ -71,3 +71,65 @@ public boolean isUniqueChars3(String str) {
 
 2、 如果原字符串可以更改，则先对其进行排序O(n logn)，然后比较相邻的两个char是否重复。
 
+### 1.2
+
+**Implement a function void reverse(char* str) in C or C++ which reverses a null-terminated string.**
+
+注意要原地反转（in place）。让两个指针从string两端同时遍历，并相互交换值，知道两个指针相遇为止。
+
+### 1.3
+
+**Given two strings, write a method to decide if one is a permutation of the other.**
+
+注意首先思考两点：1. 是否是case sensitive的，2. 空格算不算
+
+而且还要意识到一点：如果两个字符串长度不一样，肯定false。
+
+算法一：
+
+先排序，在比较。如果互为permutation，排序后肯定一样。
+
+```java
+public String sort(String s) {
+	char[] content = s.toCharArray();
+	java.util.Arrays.sort(content);
+	return new String(content);
+}
+
+public boolean permutation(String s, String t) {
+	if (s.length() != t.length()) return false;
+	return sort(s).equals(sort(t));
+}
+```
+
+算法二：
+
+如果互为permutation，则他们的每个字母的个数是相同的。数一数便知（数的时候考虑用ASCII 256特性）。
+
+```java
+public boolean permutation(String s, String t) {
+	if (s.length() != t.length()) return false;
+	
+	int[] letters = new int[256];
+	
+	// 先数s中的
+	char[] s_array = s.toCharArray();
+	for (char c : s_array) {
+		letters[c]++;
+	}
+	
+	// 然后对于t，遍历，遇到每个char就把统计的s的char相应的数量减少1
+	for (int i = 0; i < t.length(); i++) {
+		int c = (int) t.charAt(i);
+		if (--letters[c] < 0) {
+			return false;
+		}
+	}
+	return true;
+}
+```
+
+
+
+
+
