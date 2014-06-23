@@ -14,4 +14,14 @@ Dynamically resizing array.
 
 It simply creates an **array** of all the strings, copying them back to a string only when necessary.
 
+```java
+public String joinWords(String[] words) {
+    StringBuffer sentence = new StringBuffer();
+    for ( String w : words) {
+        sentence.append(w);
+    }
+    return sentence.toString();
+}
+```
 
+### Questions
