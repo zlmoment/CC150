@@ -127,4 +127,103 @@ http://goo.gl/C7uN1
 
 ### Java - Methods
 
+**Method Overloading**:
+
+When a class has two or more methods by same name but different parameters, it is known as method overloading. It is different from overriding. In overriding a method has same method name, type, number of parameters etc.
+
+**Variable Arguments(var-args)**:
+
+JDK 1.5 enables you to pass a variable number of arguments of the same type to a method. The parameter in the method is declared as follows:
+
+```
+typeName... parameterName
+```
+
+**The finalize( ) Method**:
+
+It is possible to define a method that will be called just before an object's final destruction by the garbage collector. This method is called finalize( ), and it can be used to ensure that an object terminates cleanly.
+
+#### Java - Inheritance
+
+Inheritance can be defined as the process where one object acquires the properties of another. 
+
+When we talk about inheritance, the most commonly used keyword would be **extends** and **implements**. 
+
+With use of the extends keyword the subclasses will be able to inherit all the properties of the superclass except for the private properties of the superclass.
+
+The implements keyword is used by classes by inherit from interfaces. Interfaces can never be extended by the classes.
+
+A very important fact to remember is that Java only supports only single inheritance. However, a class can implement one or more interfaces.
+
+IS-A and HAS-A relationship.
+
+#### Java - Overriding
+
+In object-oriented terms, overriding means to override(不顾，不理) the functionality of an existing method.
+
+A method declared final cannot be overridden.
+
+A method declared static cannot be overridden but can be re-declared.
+
+Constructors cannot be overridden.
+
+When invoking a superclass version of an overridden method the **super** keyword is used.
+
+#### Java - Polymorphism (多态)
+
+We already have discussed method overriding, where a child class can override a method in its parent. An overridden method is essentially hidden in the parent class, and is not invoked unless the child class uses the super keyword within the overriding method.
+
+This behavior is referred to as **virtual method invocation**, and the methods are referred to as virtual methods. All methods in Java behave in this manner, whereby an overridden method is invoked at run time, no matter what data type the reference is that was used in the source code at compile time.
+
+Java中其实没有虚函数的概念，它的普通函数就相当于C++的虚函数，动态绑定是Java的默认行为。如果Java中不希望某个函数具有虚函数特性，可以加上final关键字变成非虚函数
+
+重载，英文名是overloading，是指在同一个类中定义了一个以上具有相同名称，但是型构不同的方法。在同一个类中，是不允许定义多于一个的具有相同型构的方法的。
+
+#### Java - Abstraction
+
+**Abstract Class**:
+
+An abstract class is one that cannot be instantiated. All other functionality of the class still exists, and its fields, methods, and constructors are all accessed in the same manner. You just cannot create an instance of the abstract class.
+
+If a class is abstract and cannot be instantiated, the class does not have much use unless it is subclass. 
+
+**Abstract Methods**:
+
+If you want a class to contain a particular method but you want the actual implementation of that method to be determined by child classes, you can declare the method in the parent class as abstract.
+
+The abstract keyword is also used to declare a method as abstract. An abstract method consists of a method signature, but no method body.
+
+Abstract method would have no definition, and its signature is followed by a semicolon, not curly braces.
+
+```
+public abstract class Employee
+{
+   private String name;
+   private String address;
+   private int number;
+   
+   public abstract double computePay();
+   
+   //Remainder of class definition
+}
+```
+
+Declaring a method as abstract has two results:
+
+1) The class must also be declared abstract. If a class contains an abstract method, the class must be abstract as well.
+
+2) Any child class must either override the abstract method or declare itself abstract.
+
+#### Java - Encapsulation (封装)
+
+#### Java - Interfaces
+
+An interface is a collection of abstract methods.
+
+
+
+
+
+
+
 
