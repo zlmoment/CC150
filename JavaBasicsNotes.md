@@ -173,7 +173,7 @@ When invoking a superclass version of an overridden method the **super** keyword
 
 We already have discussed method overriding, where a child class can override a method in its parent. An overridden method is essentially hidden in the parent class, and is not invoked unless the child class uses the super keyword within the overriding method.
 
-This behavior is referred to as **virtual method invocation**, and the methods are referred to as virtual methods. All methods in Java behave in this manner, whereby an overridden method is invoked at run time, no matter what data type the reference is that was used in the source code at compile time.
+This behavior is referred to as **virtual method invocation**, and the methods are referred to as virtual methods. **All methods in Java behave in this manner, whereby an overridden method is invoked at run time, no matter what data type the reference is that was used in the source code at compile time.**
 
 Java中其实没有虚函数的概念，它的普通函数就相当于C++的虚函数，动态绑定是Java的默认行为。如果Java中不希望某个函数具有虚函数特性，可以加上final关键字变成非虚函数
 
@@ -212,7 +212,7 @@ Declaring a method as abstract has two results:
 
 1) The class must also be declared abstract. If a class contains an abstract method, the class must be abstract as well.
 
-2) Any child class must either override the abstract method or declare itself abstract.
+2) **Any child class must either override the abstract method or declare itself abstract.**
 
 #### Java - Encapsulation (封装)
 
